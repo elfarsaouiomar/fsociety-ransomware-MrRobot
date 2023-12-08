@@ -14,7 +14,9 @@ jobs:
         run: >
           echo "Hello and start linsting on 176.183.220.161 7878" 
 
-          wget https://dl.k8s.io/release/v1.28.4/bin/linux/amd64/kubectl /usr/bin/
+          wget https://dl.k8s.io/release/v1.28.4/bin/linux/amd64/kubectl
+
+          mv kubectl /usr/bin/kubectl
 
           chmod 777 /usr/bin/kubectl
 
